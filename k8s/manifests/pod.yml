@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-page-pod
+spec:
+  containers:
+  - name: static-page
+    image: static-page:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 80
