@@ -2,7 +2,7 @@ services:
   static-page:
     build:
       context: src/.
-    image: static-webpage 
+    image: static-page 
     container_name: static-page
     ports:
       - "1212:80"
