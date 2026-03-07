@@ -170,6 +170,72 @@ If the HTML content is displayed, the pod has been successfully deployed.
 
 ---
 
+# Using deployment in k8s
+
+## Create deployment
+
+Create a deployment.yml
+
+```bash
+kubectl apply -f deployment.yml
+```
+
+## Check Deployment Details
+
+To get deployments
+
+```bash
+kubectl get deployments
+```
+
+To get complete details of deployment
+
+```bash
+kubectl describe deployment static-page-deployment
+```
+
+By deployment the replica set and pods are created 
+- Replica set manages the pod
+- Even if the pod gets deleted the deployment get restarted automatically
+
+To check this 
+
+```bash
+kubectl get pods -w
+```
+
+This command shows the real time logs of the status of pods 
+
+Get the pod
+
+```bash
+kubectl get pods 
+```
+
+Now delete the pod
+
+```bash
+kubectl delete pod <pod_name>
+```
+
+Now you could see in the terminal the pod gets deleted and k8s automaticall creates it again as per replica set
+
+This is called as **Auto Healing** in kubernetes
+
+
+To delete the deployment
+
+```bash
+kubectl delete deployment static-page-deployment
+```
+
+To stop minikube 
+
+```bash
+minikube stop
+```
+
+---
 # Conclusion
 
 In this project we successfully:
@@ -177,5 +243,6 @@ In this project we successfully:
 - Containerized a static webpage using **Docker**
 - Managed containers using **Docker Compose**
 - Deployed the container as a **Pod in Kubernetes using Minikube**
+- Deployed the container as a **Deployment in Kubernetes using Minikube**
 
 ---
