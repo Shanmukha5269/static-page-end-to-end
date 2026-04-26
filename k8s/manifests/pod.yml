@@ -5,7 +5,6 @@ metadata:
 spec:
   containers:
   - name: static-page
-    image: static-page:latest
-    imagePullPolicy: Never
+    image: shanmukha8197/static-page:v1
     ports:
     - containerPort: 80
