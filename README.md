@@ -240,7 +240,7 @@ minikube stop
 
 ---
 
-# 3. Using Kubernetes Services of typ NodePort
+# 4. Using Kubernetes Services of type NodePort
 
 ## Start Minikube
 
