@@ -123,6 +123,7 @@ Instead, we load the locally built image into Minikube:
 minikube image load static-page:latest
 ```
 
+But now the docker image is available in the docker hub so no need of loading image into minikube 
 ---
 
 ## Create Pod
@@ -139,6 +140,8 @@ Create the pod:
 ```bash
 kubectl create -f pod.yml
 ```
+
+The pod.yml is updated and it pulls the image from the docker hub
 
 ---
 
@@ -174,7 +177,7 @@ If the HTML content is displayed, the pod has been successfully deployed.
 
 ## Create deployment
 
-Create a deployment.yml
+Create a deployment
 
 ```bash
 kubectl apply -f deployment.yml
@@ -236,6 +239,56 @@ minikube stop
 ```
 
 ---
+
+# 3. Using Kubernetes Services of typ NodePort
+
+## Start Minikube
+
+```bash
+minikube start
+```
+
+---
+
+## Create service 
+
+Create a service
+
+```bash
+kubectl apply -f service.yml
+```
+
+## Check Service Details
+
+To get services
+
+```bash
+kubectl get svc
+```
+
+To get complete details of service
+
+```bash
+kubectl describe svc static-page-service
+```
+
+To get the minikube ip
+
+```bash
+minikube ip
+```
+
+## Now you can access the application in your browser itself
+## As your browser is also under the same networks as that of minikube
+
+You can access the application using url
+
+```bash
+http://<minikube-ip-address>:30007
+```
+
+---
+
 # Conclusion
 
 In this project we successfully:
@@ -244,5 +297,6 @@ In this project we successfully:
 - Managed containers using **Docker Compose**
 - Deployed the container as a **Pod in Kubernetes using Minikube**
 - Deployed the container as a **Deployment in Kubernetes using Minikube**
+- Deployed the container **Using Kubernetes Services**
 
 ---
