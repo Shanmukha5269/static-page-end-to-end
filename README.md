@@ -182,6 +182,7 @@ Create a deployment
 ```bash
 kubectl apply -f deployment.yml
 ```
+---
 
 ## Check Deployment Details
 
@@ -250,6 +251,15 @@ minikube start
 
 ---
 
+## Create deployment
+
+Create a deployment
+
+```bash
+kubectl apply -f deployment.yml
+```
+---
+
 ## Create service 
 
 Create a service
@@ -257,6 +267,7 @@ Create a service
 ```bash
 kubectl apply -f service.yml
 ```
+---
 
 ## Check Service Details
 
@@ -277,6 +288,7 @@ To get the minikube ip
 ```bash
 minikube ip
 ```
+---
 
 ## Now you can access the application in your browser itself
 ## As your browser is also under the same networks as that of minikube
