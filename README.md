@@ -1,5 +1,7 @@
 # Static Webpage Deployment using Docker and Kubernetes
 
+![Request Flow](images/diagram.png)   
+
 This project demonstrates **end-to-end deployment of a simple static webpage** using:
 
 - **Docker** for containerization
