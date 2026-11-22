@@ -19,42 +19,15 @@ jobs:
 
       - name: Install linters
         run: npm install -g htmlhint stylelint stylelint-config-standard eslint @eslint/js prettier
-
-      - name: Create Stylelint config
-        run: |
-          cat > stylelint.config.mjs <<'EOF'
-          export default {
-            extends: ["stylelint-config-standard"]
-          };
-          EOF
-
-      - name: Create ESLint config
-        run: |
-          cat > eslint.config.js <<'EOF'
-          import js from "@eslint/js";
-
-          export default [
-            js.configs.recommended,
-            {
-              languageOptions: {
-                globals: {
-                  console: "readonly",
-                  document: "readonly",
-                  window: "readonly"
-                }
-              }
-            }
-          ];
-          EOF
-
+      
       - name: Run HTML linting
         run: htmlhint "src/**/*.html"
-
+      
       - name: Run CSS linting
         run: stylelint "src/**/*.css"
-
+      
       - name: Run JavaScript linting
         run: eslint "src/**/*.js"
-
+      
       - name: Run Prettier
-        run: prettier --check "**/*.{html,css,js}"
+        run: npm install -g prettier && prettier --check "**/*.{html,css,js}"
