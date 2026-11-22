@@ -1,7 +1,7 @@
 name: Demo CI
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   print-job:
