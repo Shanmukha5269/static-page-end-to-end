@@ -18,16 +18,16 @@ jobs:
           node-version: '20.17'
 
       - name: Install linters
-        run: npm install -g htmlhint stylelint stylelint-config-standard eslint @eslint/js prettier
-      
+        run: npm install -g htmlhint stylelint stylelint-config-standard eslint prettier
+
       - name: Run HTML linting
         run: htmlhint "src/**/*.html"
-      
+
       - name: Run CSS linting
         run: stylelint "src/**/*.css"
-      
+
       - name: Run JavaScript linting
         run: eslint "src/**/*.js"
-      
+
       - name: Run Prettier
         run: npm install -g prettier && prettier --check "**/*.{html,css,js}"
