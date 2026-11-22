@@ -1,0 +1,11 @@
+name: Demo CI
+
+on:
+  workflow_dispatch
+
+jobs:
+  print-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print job
+        run: echo "This is a Demo job"
